@@ -3,10 +3,10 @@
 
 ## What it gives you?
 	
-*Jupyter Notebook last version
-*Support Python and R 
-*R base-core with common utilities
-*devtools
+* Jupyter Notebook last version
+* Support Python and R 
+* R base-core with common utilities
+* devtools
 	
 
 ## Basic Use 
@@ -24,6 +24,8 @@ The execution of this command will provide you an url with a randomly generated 
 You can also pull this container through the docker hub by running this command:
 
 ```
-[docker pull joyndjama/rjupyter](https://hub.docker.com/r/joyndjama/rjupyter/)
+docker pull joyndjama/rjupyter
 ```
+
+Or you can browse the [repository](https://hub.docker.com/r/joyndjama/rjupyter/)
 	
