@@ -5,6 +5,8 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade && \
+    apt-get update && \
+    apt-get -y install distro-info-data && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 
 RUN add-apt-repository "deb http://cran.rstudio.com/bin/linux/ubuntu $(lsb_release -sc)/" && \
@@ -28,7 +30,11 @@ RUN su - -c "R -e \"install.packages(c('crayon', 'pbdZMQ', 'devtools'), repos = 
 	 su - -c "R -e \"devtools::install_github(paste0('IRkernel/', c('repr', 'IRdisplay', 'IRkernel')))\""  &&\
 	su - -c "R -e \"IRkernel::installspec(user = FALSE)\""
 
-RUN su - -c "R -e \"install.packages('swirl', repos = 'https://cloud.r-project.org/')\""
+#RUN su - -c "R -e \"install.packages('swirl', repos = 'https://cloud.r-project.org/')\""
+
+#RUN su - -c "R -e \"library('swirl');install_from_swirl('R Programming');		\""
+
+#RUN su - -c "R -e \"install_from_swirl('R Programming')\""
 
 #Configure environment //idea comming from https://github.com/jupyter/docker-stacks
 
@@ -48,4 +54,6 @@ EXPOSE 8888
 WORKDIR $HOME
 
 CMD jupyter notebook --ip=*
-USER $JN_USER
+
+USER $JN_USER 
+#uncomment this line if you will not do some installation on R when using.

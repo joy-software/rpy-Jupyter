@@ -6,7 +6,7 @@
 * Jupyter Notebook last version
 * Support Python and R 
 * R base-core with common utilities
-* R add-on Packages: devtools, swirl
+* R add-on Packages: devtools
 	
 
 ## Basic Use 
