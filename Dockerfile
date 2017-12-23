@@ -28,7 +28,7 @@ RUN su - -c "R -e \"install.packages(c('crayon', 'pbdZMQ', 'devtools'), repos = 
 	 su - -c "R -e \"devtools::install_github(paste0('IRkernel/', c('repr', 'IRdisplay', 'IRkernel')))\""  &&\
 	su - -c "R -e \"IRkernel::installspec(user = FALSE)\""
 
-RUN su - -c "R -e \"install.packages('swirl', repos = 'http://cran.rstudio.com/')\""
+RUN su - -c "R -e \"install.packages('swirl', repos = 'https://cloud.r-project.org/')\""
 
 #Configure environment //idea comming from https://github.com/jupyter/docker-stacks
 
